@@ -1,0 +1,160 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+$auto-name: 'auto'
+$auto-x: 67px
+$auto-y: 0px
+$auto-offset-x: -67px
+$auto-offset-y: 0px
+$auto-width: 68px
+$auto-height: 54px
+$auto-total-width: 179px
+$auto-total-height: 126px
+$auto-image: '../img/sprite.png'
+$auto: (67px, 0px, -67px, 0px, 68px, 54px, 179px, 126px, '../img/sprite.png', 'auto', )
+$build-name: 'build'
+$build-x: 0px
+$build-y: 0px
+$build-offset-x: 0px
+$build-offset-y: 0px
+$build-width: 67px
+$build-height: 67px
+$build-total-width: 179px
+$build-total-height: 126px
+$build-image: '../img/sprite.png'
+$build: (0px, 0px, 0px, 0px, 67px, 67px, 179px, 126px, '../img/sprite.png', 'build', )
+$checkbox-name: 'checkbox'
+$checkbox-x: 161px
+$checkbox-y: 59px
+$checkbox-offset-x: -161px
+$checkbox-offset-y: -59px
+$checkbox-width: 14px
+$checkbox-height: 14px
+$checkbox-total-width: 179px
+$checkbox-total-height: 126px
+$checkbox-image: '../img/sprite.png'
+$checkbox: (161px, 59px, -161px, -59px, 14px, 14px, 179px, 126px, '../img/sprite.png', 'checkbox', )
+$lamp-name: 'lamp'
+$lamp-x: 135px
+$lamp-y: 0px
+$lamp-offset-x: -135px
+$lamp-offset-y: 0px
+$lamp-width: 44px
+$lamp-height: 59px
+$lamp-total-width: 179px
+$lamp-total-height: 126px
+$lamp-image: '../img/sprite.png'
+$lamp: (135px, 0px, -135px, 0px, 44px, 59px, 179px, 126px, '../img/sprite.png', 'lamp', )
+$quote-black-name: 'quote-black'
+$quote-black-x: 135px
+$quote-black-y: 59px
+$quote-black-offset-x: -135px
+$quote-black-offset-y: -59px
+$quote-black-width: 26px
+$quote-black-height: 20px
+$quote-black-total-width: 179px
+$quote-black-total-height: 126px
+$quote-black-image: '../img/sprite.png'
+$quote-black: (135px, 59px, -135px, -59px, 26px, 20px, 179px, 126px, '../img/sprite.png', 'quote-black', )
+$quote-white-name: 'quote-white'
+$quote-white-x: 135px
+$quote-white-y: 79px
+$quote-white-offset-x: -135px
+$quote-white-offset-y: -79px
+$quote-white-width: 26px
+$quote-white-height: 20px
+$quote-white-total-width: 179px
+$quote-white-total-height: 126px
+$quote-white-image: '../img/sprite.png'
+$quote-white: (135px, 79px, -135px, -79px, 26px, 20px, 179px, 126px, '../img/sprite.png', 'quote-white', )
+$system-name: 'system'
+$system-x: 62px
+$system-y: 67px
+$system-offset-x: -62px
+$system-offset-y: -67px
+$system-width: 55px
+$system-height: 52px
+$system-total-width: 179px
+$system-total-height: 126px
+$system-image: '../img/sprite.png'
+$system: (62px, 67px, -62px, -67px, 55px, 52px, 179px, 126px, '../img/sprite.png', 'system', )
+$win-name: 'win'
+$win-x: 0px
+$win-y: 67px
+$win-offset-x: 0px
+$win-offset-y: -67px
+$win-width: 62px
+$win-height: 59px
+$win-total-width: 179px
+$win-total-height: 126px
+$win-image: '../img/sprite.png'
+$win: (0px, 67px, 0px, -67px, 62px, 59px, 179px, 126px, '../img/sprite.png', 'win', )
+$spritesheet-width: 179px
+$spritesheet-height: 126px
+$spritesheet-image: '../img/sprite.png'
+$spritesheet-sprites: ($auto, $build, $checkbox, $lamp, $quote-black, $quote-white, $system, $win, )
+$spritesheet: (179px, 126px, '../img/sprite.png', $spritesheet-sprites, )
+
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+
+  Example usage in HTML:
+    `display: block` sprite:
+    <div class="icon-home"></div>
+
+  To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+    // CSS
+    .icon {
+      display: inline-block;
+    }
+
+    // HTML
+    <i class="icon icon-home"></i>
+  */
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

@@ -1,0 +1,570 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+
+  Example usage in HTML:
+    `display: block` sprite:
+    <div class="icon-home"></div>
+
+  To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class: */
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+.icon-auto {
+  background-image: url(../img/sprite.png);
+  background-position: -67px 0px;
+  width: 68px;
+  height: 54px; }
+
+.icon-build {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 67px;
+  height: 67px; }
+
+.icon-checkbox {
+  background-image: url(../img/sprite.png);
+  background-position: -161px -59px;
+  width: 14px;
+  height: 14px; }
+
+.icon-lamp {
+  background-image: url(../img/sprite.png);
+  background-position: -135px 0px;
+  width: 44px;
+  height: 59px; }
+
+.icon-quote-black {
+  background-image: url(../img/sprite.png);
+  background-position: -135px -59px;
+  width: 26px;
+  height: 20px; }
+
+.icon-quote-white {
+  background-image: url(../img/sprite.png);
+  background-position: -135px -79px;
+  width: 26px;
+  height: 20px; }
+
+.icon-system {
+  background-image: url(../img/sprite.png);
+  background-position: -62px -67px;
+  width: 55px;
+  height: 52px; }
+
+.icon-win {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -67px;
+  width: 62px;
+  height: 59px; }
+
+@font-face {
+  src: url("../fonts/Uni Sans Light.ttf");
+  font-family: "Uni Sans Light";
+  font-weight: 300; }
+
+@font-face {
+  src: url("../fonts/Uni Sans Light Italic.ttf");
+  font-family: "Uni Sans Light Italic";
+  font-weight: 300;
+  font-weight: italic; }
+
+@font-face {
+  src: url("../fonts/Uni Sans Book.ttf");
+  font-family: "Uni Sans Book";
+  font-weight: 400; }
+
+@font-face {
+  src: url("../fonts/Uni Sans Book Italic.ttf");
+  font-family: "Uni Sans Book Italic";
+  font-weight: 400;
+  font-weight: italic; }
+
+@font-face {
+  src: url("../fonts/Uni Sans Bold.ttf");
+  font-family: "Uni Sans Bold";
+  font-weight: 700; }
+
+@font-face {
+  src: url("../fonts/Uni Sans Bold Italic.ttf");
+  font-family: "Uni Sans Bold Italic";
+  font-weight: 700;
+  font-weight: italic; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  position: relative;
+  font: 16px "Tahoma", sans-serif;
+  color: #1e1e1e;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 1920px;
+  margin: 0 auto; }
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button, .show, .block {
+  display: block; }
+
+.inline-block {
+  display: inline-block; }
+
+meta, script, style, .hidden {
+  display: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+h1 {
+  font-size: 24px; }
+
+h2 {
+  font-size: 20px; }
+
+h3 {
+  font-size: 16px; }
+
+h4 {
+  font-size: 14px; }
+
+h5 {
+  font-size: 12px; }
+
+h6 {
+  font-size: 10px; }
+
+a {
+  color: #1e1e1e;
+  text-decoration: none; }
+
+button, input[type="submit"] {
+  cursor: pointer; }
+
+button, input, textarea {
+  display: block;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: "Tahoma", sans-serif; }
+
+textarea {
+  resize: none; }
+
+ul, ol {
+  margin: 5px 0 5px 20px; }
+
+::-webkit-input-placeholder {
+  color: gray; }
+
+::-moz-placeholder {
+  color: gray; }
+
+:-ms-input-placeholder {
+  color: gray; }
+
+::placeholder {
+  color: gray; }
+
+.tal {
+  text-align: left; }
+
+.tac {
+  text-align: center; }
+
+.tar {
+  text-align: right; }
+
+.ttc {
+  text-transform: capitalize; }
+
+i.icon {
+  display: inline-block; }
+
+.i, i {
+  font-style: italic; }
+
+.b, b, strong {
+  font-weight: bold; }
+
+.btn, button {
+  display: block;
+  text-align: center;
+  cursor: pointer; }
+
+.bold {
+  font-family: "Uni Sans Bold"; }
+  .bold.italic {
+    font-family: "Uni Sans Bold Italic";
+    font-weight: bold; }
+
+.container {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto; }
+
+.row:before, .row:after, .clearfix:before, .clearfix:after {
+  display: table;
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.row:after, .clearfix:after {
+  clear: both; }
+
+.w0 .a1 {
+  width: 8.33333333%; }
+
+.w0 .a2 {
+  width: 16.66666667%; }
+
+.w0 .a3 {
+  width: 25%; }
+
+.w0 .a4 {
+  width: 33.33333333%; }
+
+.w0 .a5 {
+  width: 41.66666667%; }
+
+.w0 .a6 {
+  width: 50%; }
+
+.w0 .a7 {
+  width: 58.33333333%; }
+
+.w0 .a8 {
+  width: 66.66666667%; }
+
+.w0 .a9 {
+  width: 75%; }
+
+.w0 .a10 {
+  width: 83.33333333%; }
+
+.w0 .a11 {
+  width: 91.66666667%; }
+
+.w0 .a12 {
+  width: 100%; }
+
+.w2 > .col {
+  width: 50%; }
+
+.w3 > .col {
+  width: 33.333333333%; }
+
+.w4 > .col {
+  width: 25%; }
+
+.w5 > .col {
+  width: 20%; }
+
+.w6 > .col {
+  width: 16.666666667%; }
+
+.col {
+  display: block;
+  float: left;
+  min-height: 1px; }
+
+.input {
+  height: 60px;
+  width: 370px;
+  background: #fff;
+  font-size: 14px;
+  font-family: "Uni Sans Light";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #969696;
+  text-align: center;
+  display: inline-block;
+  margin-right: 27px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-border-radius: 0;
+          border-radius: 0; }
+  .input:focus {
+    -webkit-box-shadow: 0px 0px 20px -1px white;
+            box-shadow: 0px 0px 20px -1px white; }
+
+.button {
+  height: 60px;
+  width: 370px;
+  background: #79D26F;
+  font-size: 14px;
+  font-family: "Uni Sans Bold";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  -webkit-transition: .3s;
+  transition: .3s; }
+  .button:hover {
+    background: #599A52; }
+
+.main {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url("../img/bg/1.jpg");
+  padding-top: 70px;
+  padding-bottom: 110px; }
+  .main .container {
+    text-align: center; }
+
+.main__logo {
+  position: absolute;
+  top: 22px;
+  left: 55px; }
+
+.main__date__name {
+  font-size: 17px;
+  font-family: "Uni Sans Light";
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 4px;
+  padding-bottom: 12px; }
+
+.main__date__num {
+  font-size: 35px;
+  font-family: "Uni Sans Light";
+  color: #fff;
+  margin-bottom: 145px; }
+
+.main__title {
+  margin-bottom: 90px; }
+
+.main__title__name {
+  font-size: 20px;
+  font-family: "Uni Sans Bold";
+  color: #79D26F;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 26px; }
+
+.main__title__description {
+  font-size: 50px;
+  font-family: "Uni Sans Light";
+  color: #fff; }
+
+.main__cta__text {
+  font-size: 23px;
+  font-family: "Uni Sans Light";
+  line-height: 30px;
+  color: #fff;
+  padding-bottom: 27px; }
+
+.who-clients {
+  text-align: center;
+  padding-top: 91px;
+  padding-bottom: 81px; }
+
+.who-clients__title {
+  font-size: 40px;
+  font-family: "Uni Sans Light";
+  color: #1e1e1e;
+  margin-bottom: 58px; }
+
+.who-clients__icon {
+  height: 67px;
+  margin-bottom: 36px; }
+  .who-clients__icon * {
+    margin: 0 auto; }
+
+.who-clients__text {
+  font-size: 18px;
+  font-family: "Uni Sans Book";
+  color: #646464;
+  line-height: 25px; }
+
+.quote-woman {
+  background: url("../img/bg/2.jpg") no-repeat left top;
+  color: #fff;
+  padding-top: 110px;
+  padding-bottom: 153px; }
+
+.quote-woman__text, .quote-woman__description {
+  width: 755px;
+  float: right; }
+
+.quote-woman__text {
+  font-size: 30px;
+  font-family: "Uni Sans Light";
+  line-height: 40px;
+  padding-bottom: 45px;
+  position: relative; }
+  .quote-woman__text:before {
+    content: "";
+    background-image: url(../img/sprite.png);
+    background-position: -135px -79px;
+    width: 26px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: -70px; }
+
+.quote-woman__description {
+  font-size: 20px;
+  font-family: "Uni Sans Light Italic";
+  line-height: 30px;
+  font-weight: 300; }
+
+.about {
+  padding-top: 128px;
+  background: url(../img/bg/3.jpg) no-repeat right top;
+  background-size: 1010px 549px;
+  margin-top: -50px; }
+
+.about__container {
+  padding-left: 55px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  .about__container:after {
+    position: relative;
+    display: block;
+    content: '';
+    width: 4px;
+    height: 100px;
+    background: #79D26F;
+    margin: -40px auto 39px;
+    right: 28px; }
+
+.about__title {
+  font-size: 40px;
+  font-family: "Uni Sans Bold";
+  color: #1e1e1e;
+  padding-bottom: 45px; }
+
+.checked-list {
+  font-size: 18px;
+  font-family: "Uni Sans Book";
+  color: #646464;
+  line-height: 25px;
+  width: 470px; }
+
+.checked-list__item {
+  position: relative;
+  margin-left: 25px;
+  margin-bottom: 36px; }
+  .checked-list__item:before {
+    content: "";
+    background-image: url(../img/sprite.png);
+    background-position: -161px -59px;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: absolute;
+    left: -25px;
+    top: 3px; }
+
+.about__system {
+  width: 975px;
+  font-size: 40px;
+  font-family: "Uni Sans Light";
+  text-align: center;
+  padding-bottom: 67px; }
+
+.idea {
+  background: #79D26F;
+  color: #fff;
+  padding-top: 46px;
+  padding-bottom: 73px; }
+
+.idea__icon {
+  margin: 0 auto 30px; }
+
+.idea__text {
+  font-size: 25px;
+  font-family: "Uni Sans Book";
+  line-height: 35px;
+  text-align: center;
+  padding-left: 125px;
+  padding-right: 125px; }
+
+.quote-ulanov {
+  background: url(../img/bg/4.jpg) no-repeat left top;
+  padding-top: 85px;
+  padding-bottom: 37px; }
+
+.quote-ulanov__text {
+  font-size: 18px;
+  font-family: "Uni Sans Book";
+  line-height: 28px;
+  color: #646464;
+  float: right;
+  width: 525px;
+  padding-right: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative; }
+  .quote-ulanov__text:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../img/sprite.png);
+    background-position: -135px -59px;
+    width: 26px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: -55px; }
+  .quote-ulanov__text p {
+    padding-bottom: 27px; }
+
+.bottom-cta {
+  position: relative;
+  background: url("../img/bg/5.jpg") top center;
+  color: #fff;
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 184px; }
+
+.bottom-cta__title {
+  font-size: 40px;
+  font-family: "Uni Sans Light";
+  padding-bottom: 13px; }
+
+.bottom-cta__text {
+  margin: 0 auto;
+  width: 870px;
+  font-size: 23px;
+  font-family: "Uni Sans Light";
+  line-height: 30px;
+  padding-bottom: 52px; }
+
+.bottom-cta__links {
+  font-size: 12px;
+  font-family: "Uni Sans Book";
+  position: absolute;
+  left: 55px;
+  bottom: 33px; }
+  .bottom-cta__links a {
+    color: #fff;
+    margin-right: 26px;
+    opacity: 0.5;
+    -webkit-transition: .3s;
+    transition: .3s; }
+    .bottom-cta__links a:hover {
+      opacity: 1; }
